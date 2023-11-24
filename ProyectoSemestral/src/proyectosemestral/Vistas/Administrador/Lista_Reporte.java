@@ -63,8 +63,6 @@ public class Lista_Reporte extends javax.swing.JFrame {
         lblTipoEmpleado = new javax.swing.JLabel();
         lbl_icon_persona = new javax.swing.JLabel();
         pane_lado_izquierdo = new javax.swing.JPanel();
-        btn_Vendedores = new javax.swing.JButton();
-        btn_Vehiculo = new javax.swing.JButton();
         btn_Reporte = new javax.swing.JButton();
         btn_cerrar_session = new javax.swing.JButton();
 
@@ -292,26 +290,6 @@ public class Lista_Reporte extends javax.swing.JFrame {
 
         pane_lado_izquierdo.setBackground(new java.awt.Color(102, 102, 102));
 
-        btn_Vendedores.setBackground(new java.awt.Color(102, 102, 102));
-        btn_Vendedores.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_Vendedores.setText("Vendedores");
-        btn_Vendedores.setBorder(null);
-        btn_Vendedores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_VendedoresActionPerformed(evt);
-            }
-        });
-
-        btn_Vehiculo.setBackground(new java.awt.Color(102, 102, 102));
-        btn_Vehiculo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_Vehiculo.setText("Vehiculo");
-        btn_Vehiculo.setBorder(null);
-        btn_Vehiculo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_VehiculoActionPerformed(evt);
-            }
-        });
-
         btn_Reporte.setBackground(new java.awt.Color(102, 102, 102));
         btn_Reporte.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_Reporte.setText("Reporte");
@@ -336,21 +314,14 @@ public class Lista_Reporte extends javax.swing.JFrame {
             pane_lado_izquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pane_lado_izquierdoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pane_lado_izquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_Vendedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_Vehiculo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
-                    .addComponent(btn_Reporte, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
+                .addComponent(btn_Reporte, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
                 .addContainerGap())
             .addComponent(btn_cerrar_session, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
         );
         pane_lado_izquierdoLayout.setVerticalGroup(
             pane_lado_izquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pane_lado_izquierdoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btn_Vendedores, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
-                .addComponent(btn_Vehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
+                .addGap(330, 330, 330)
                 .addComponent(btn_Reporte, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(72, 72, 72)
                 .addComponent(btn_cerrar_session, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
@@ -430,21 +401,6 @@ public class Lista_Reporte extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnGenerarReporte4ActionPerformed
 
-    private void btn_VendedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VendedoresActionPerformed
-        // TODO add your handling code here:
-        new Lista_Vendedores().setVisible(true);
-
-        this.dispose();
-    }//GEN-LAST:event_btn_VendedoresActionPerformed
-
-    private void btn_VehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VehiculoActionPerformed
-        // TODO add your handling code here:
-        new Lista_Vehiculos().setVisible(true);
-        
-        this.dispose();
-
-    }//GEN-LAST:event_btn_VehiculoActionPerformed
-
     private void btn_ReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ReporteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_ReporteActionPerformed
@@ -465,8 +421,6 @@ public class Lista_Reporte extends javax.swing.JFrame {
     private javax.swing.JButton btnGenerarReporteVehiculo;
     private javax.swing.JButton btnGenerarReporteVendedor;
     private javax.swing.JButton btn_Reporte;
-    private javax.swing.JButton btn_Vehiculo;
-    private javax.swing.JButton btn_Vendedores;
     private javax.swing.JButton btn_cerrar_session;
     private javax.swing.JLabel icon_auto;
     private javax.swing.JLabel lblArriendoVehiculo;
