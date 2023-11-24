@@ -436,11 +436,11 @@ public class Lista_Clientes extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_clientesActionPerformed
 
     private void btn_registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrarActionPerformed
-        // TODO add your handling code here:
-        new Registrar_Arriendo().setVisible(true);
-        
+        //
+        Registrar_Arriendo VenArriendo = new Registrar_Arriendo();
+        VenArriendo.setEmpleado(this.empleado);
+        VenArriendo.setVisible(true);
         this.dispose();
-
 
     }//GEN-LAST:event_btn_registrarActionPerformed
 

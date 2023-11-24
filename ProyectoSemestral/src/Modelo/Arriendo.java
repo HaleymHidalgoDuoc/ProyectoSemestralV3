@@ -1,5 +1,9 @@
 package Modelo;
 
+import conexion.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Date;
 
 /**
@@ -105,15 +109,42 @@ public class Arriendo {
     }
     
     //Metodos propios
-    public boolean guardarArriendo(String idEmpleado, String idVehiculo, String idCliente, String descripcion, Date fecTer){
+    public boolean guardarArriendo(String idEmpleado, String idVehiculo, String idCliente, String descripcion, Date fecTer, int precio){
         //Obtengo todos los datos
-        int id_registro;
-        String fechaInicio = "CURDATE()";
+        java.sql.Date fechaInicio = new java.sql.Date(new Date().getTime());
         java.sql.Date fechaTermino = new java.sql.Date(fecTer.getTime());
-        String precio = "(SELECT valor_hora * DATEDIFF('" + fechaTermino + "', CURDATE())" +
-                        "FROM vehiculo" +
-                        "WHERE patente_vehiculo = '" + idVehiculo + "')";
+        //Precio
+        //Descripcion
+        //IdCliente
+        //rutEmpleado
+        //idVehiculo
         
+        try{
+        //Crear Conexcion
+        Conexion conexion1 = new Conexion();
+        Connection cnx = conexion1.obtenerConexion();
         
+        //Preparar Query
+        String query = "INSERT INTO arriendo (fecha_inicio, fecha_termino, precio, descripcion, id_cliente, rut_empleado, patente_vehiculo) VALUES (?,?,?,?,?,?,?)";
+        PreparedStatement stmt = cnx.prepareStatement(query);
+        
+        //Datos de la Query
+        stmt.setDate(1, fechaInicio);
+        stmt.setDate(2, fechaTermino);
+        stmt.setInt(3, precio);
+        stmt.setString(4, descripcion);
+        stmt.setString(5, idCliente);
+        stmt.setString(6, idEmpleado);
+        stmt.setString(7, idVehiculo);
+        
+        stmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error SQL al agregar Cliente" + e.getMessage());
+            return false;
+        } catch (Exception e) {
+            System.out.println("Error al agregar Cliente" + e.getMessage());
+            return false;
+        }
+        return true;
     }
 }

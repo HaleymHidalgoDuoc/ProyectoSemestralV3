@@ -22,6 +22,7 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
 
     public void setEmpleado(Empleado emp) {
         this.empleado = emp;
+        System.out.println(empleado);
         lbl_nombe_de.setText(empleado.getNombre() + empleado.getApellidoP());
         lbl_puesto.setText(empleado.getTipoEmpleado());
     }
@@ -67,6 +68,9 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
         btn_registrar = new javax.swing.JButton();
         btn_devolucion = new javax.swing.JButton();
         btn_cerrar_session = new javax.swing.JButton();
+        pane_fecha_entrega1 = new javax.swing.JPanel();
+        lbl_fecha_entrega1 = new javax.swing.JLabel();
+        txt_precio = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,7 +99,7 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
                 .addComponent(icon_auto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_autto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 203, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbl_listadeclientes)
                 .addGap(259, 259, 259)
                 .addGroup(pane_fondo_superiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,7 +255,7 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
         pane_fecha_entrega.setBackground(new java.awt.Color(204, 204, 204));
 
         lbl_fecha_entrega.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lbl_fecha_entrega.setText("Fecha de entrega");
+        lbl_fecha_entrega.setText("Fecha de Termino");
 
         txt_fecha.setForeground(new java.awt.Color(204, 204, 204));
         txt_fecha.setText("AAAA/MM/DD");
@@ -273,7 +277,7 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
                 .addComponent(lbl_fecha_entrega)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(0, 23, Short.MAX_VALUE))
         );
 
         btn_confirmar.setBackground(new java.awt.Color(204, 204, 204));
@@ -351,6 +355,34 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
                 .addComponent(btn_cerrar_session, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
         );
 
+        pane_fecha_entrega1.setBackground(new java.awt.Color(204, 204, 204));
+
+        lbl_fecha_entrega1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lbl_fecha_entrega1.setText("Precio");
+
+        txt_precio.setForeground(new java.awt.Color(204, 204, 204));
+        txt_precio.setText("99999");
+
+        javax.swing.GroupLayout pane_fecha_entrega1Layout = new javax.swing.GroupLayout(pane_fecha_entrega1);
+        pane_fecha_entrega1.setLayout(pane_fecha_entrega1Layout);
+        pane_fecha_entrega1Layout.setHorizontalGroup(
+            pane_fecha_entrega1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pane_fecha_entrega1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(pane_fecha_entrega1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_fecha_entrega1)
+                    .addComponent(txt_precio, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
+        );
+        pane_fecha_entrega1Layout.setVerticalGroup(
+            pane_fecha_entrega1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pane_fecha_entrega1Layout.createSequentialGroup()
+                .addComponent(lbl_fecha_entrega1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 11, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -358,20 +390,21 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
             .addComponent(pane_fondo_superior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pane_lado_izquierdo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(150, 150, 150)
+                .addComponent(pane_descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(200, 200, 200)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(pane_descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(200, 200, 200)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(pane_identificacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(pane_fecha_entrega, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(pabe_vehiculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_confirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pane_fecha_entrega1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(37, 37, 37)
+                        .addComponent(btn_confirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -382,7 +415,7 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pane_lado_izquierdo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
+                        .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(pane_identificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -391,8 +424,13 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
                                 .addGap(58, 58, 58)
                                 .addComponent(pane_fecha_entrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(pane_descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_confirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(btn_confirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(pane_fecha_entrega1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())))
         );
 
@@ -404,15 +442,17 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
         //Recolecto los datos
         String idCliente, idVehiculo, idEmpleado, descripcion;
         Date fechaTermino;
+        int precio;
         
         idEmpleado = empleado.getRutEmpleado();
         idVehiculo = txt_IdVehiculo.getText();
         idCliente = txtIdCliente.getText();
         descripcion = tat_descripcion.getText();
         fechaTermino = new Date(txt_fecha.getText());
+        precio = Integer.parseInt(txt_precio.getText());
         
         Arriendo con = new Arriendo();
-        if(con.guardarArriendo(idEmpleado, idVehiculo, idCliente, descripcion, fechaTermino)){
+        if(con.guardarArriendo(idEmpleado, idVehiculo, idCliente, descripcion, fechaTermino, precio)){
             System.out.println("Guardado con Exito");
         } else {
             System.out.println("Error al Guardar");
@@ -469,6 +509,7 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_autto;
     private javax.swing.JLabel lbl_descrpcion;
     private javax.swing.JLabel lbl_fecha_entrega;
+    private javax.swing.JLabel lbl_fecha_entrega1;
     private javax.swing.JLabel lbl_identificacion;
     private javax.swing.JLabel lbl_listadeclientes;
     private javax.swing.JLabel lbl_nombe_de;
@@ -477,6 +518,7 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
     private javax.swing.JPanel pabe_vehiculo;
     private javax.swing.JPanel pane_descripcion;
     private javax.swing.JPanel pane_fecha_entrega;
+    private javax.swing.JPanel pane_fecha_entrega1;
     private javax.swing.JPanel pane_fondo_descripcion;
     private javax.swing.JPanel pane_fondo_superior;
     private javax.swing.JPanel pane_identificacion;
@@ -486,5 +528,6 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdCliente;
     private javax.swing.JTextField txt_IdVehiculo;
     private javax.swing.JTextField txt_fecha;
+    private javax.swing.JTextField txt_precio;
     // End of variables declaration//GEN-END:variables
 }
