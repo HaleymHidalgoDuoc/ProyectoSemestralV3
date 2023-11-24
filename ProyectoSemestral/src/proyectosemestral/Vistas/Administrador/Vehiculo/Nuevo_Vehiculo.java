@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package proyectosemestral.Vistas.administrador.Vehiculo;
 
+import Controlador.CtrlVehiculo;
 import Modelo.Vehiculo;
 import javax.swing.JOptionPane;
 
@@ -530,7 +527,7 @@ public class Nuevo_Vehiculo extends javax.swing.JFrame {
         }
         
         //Guarda los datos en la BD
-        Vehiculo con = new Vehiculo();
+        CtrlVehiculo con = new CtrlVehiculo();
         if(con.guardarVehiculo(vehiculo)){
             System.out.println("Guardado con Exito");
         }else{
@@ -542,40 +539,6 @@ public class Nuevo_Vehiculo extends javax.swing.JFrame {
     private void txt_anioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_anioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_anioActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Nuevo_Vehiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Nuevo_Vehiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Nuevo_Vehiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Nuevo_Vehiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Nuevo_Vehiculo().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btgTipoCombustible;

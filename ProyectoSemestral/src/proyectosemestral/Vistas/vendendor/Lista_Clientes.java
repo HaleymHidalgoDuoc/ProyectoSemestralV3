@@ -1,6 +1,7 @@
 package proyectosemestral.Vistas.vendendor;
 
 //import Controlador.Registro;
+import Controlador.CtrlCliente;
 import Modelo.Cliente;
 import Modelo.Empleado;
 import Controlador.DibujarTabla;
@@ -40,7 +41,7 @@ public class Lista_Clientes extends javax.swing.JFrame {
         String estado;
         JButton btnVer, btnEditar, btnEliminar;
         
-        Cliente con = new Cliente();
+        CtrlCliente con = new CtrlCliente();
         modelo.setRowCount(0);
         
         String id = txt_buscar.getText();
@@ -498,7 +499,7 @@ public class Lista_Clientes extends javax.swing.JFrame {
                      
                     String identificacion = (String) tblClientes.getValueAt(fila, 0);
 
-                    Cliente cnx = new Cliente(); //Creo una "Conexion"
+                    CtrlCliente cnx = new CtrlCliente(); //Creo una "Conexion"
                     Cliente cliente = cnx.buscarClienteID(identificacion); //Creo una Instancia de objeto con los datos de la busqueda (devuelve Null si no encuntra)
 
                     //Instancia una Ventana de Informacion
@@ -510,7 +511,7 @@ public class Lista_Clientes extends javax.swing.JFrame {
                     
                     String identificacion = (String) tblClientes.getValueAt(fila, 0);
 
-                    Cliente cnx = new Cliente(); //Creo una "Conexion"
+                    CtrlCliente cnx = new CtrlCliente(); //Creo una "Conexion"
                     Cliente cliente = cnx.buscarClienteID(identificacion); //Creo una Instancia de objeto con los datos de la busqueda (devuelve Null si no encuntra)
 
                     //Instancia una Ventana de Edicion
@@ -522,7 +523,7 @@ public class Lista_Clientes extends javax.swing.JFrame {
                      
                     String identificacion = (String) tblClientes.getValueAt(fila, 0);
                     
-                    Cliente cnx = new Cliente(); //Creo una "Conexion"
+                    CtrlCliente cnx = new CtrlCliente(); //Creo una "Conexion"
                     Cliente cliente = cnx.buscarClienteID(identificacion); //Creo una Instancia de objeto con los datos de la busqueda (devuelve Null si no encuntra)
                     
                     //Instancia de una Ventana de Eliminacion

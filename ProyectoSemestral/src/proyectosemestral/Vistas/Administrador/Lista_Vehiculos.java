@@ -1,6 +1,7 @@
 package proyectosemestral.Vistas.Administrador;
 
 //Vistas
+import Controlador.CtrlVehiculo;
 import proyectosemestral.Vistas.administrador.Vehiculo.*;
 import proyectosemestral.Vistas.administrador.Lista_Reporte;
 import proyectosemestral.Vistas.Administrador.Vehiculo.Eliminar_Vehiculo;
@@ -42,7 +43,7 @@ public class Lista_Vehiculos extends javax.swing.JFrame {
         String disponible;
         JButton btnVer, btnEditar, btnEliminar;
         
-        Vehiculo con = new Vehiculo();
+        CtrlVehiculo con = new CtrlVehiculo();
         modelo.setRowCount(0);
         
         String id = txt_buscar.getText();
@@ -493,7 +494,7 @@ public class Lista_Vehiculos extends javax.swing.JFrame {
 
                     String identificacion = (String) tblVehiculos.getValueAt(fila, 0);
 
-                    Vehiculo cnx = new Vehiculo(); //Creo una "Conexion"
+                    CtrlVehiculo cnx = new CtrlVehiculo(); //Creo una "Conexion"
                     Vehiculo vehiculo = cnx.buscarVehiculoID(identificacion); //Creo una Instancia de objeto con los datos de la busqueda (devuelve Null si no encuntra)
 
                     //Instancia una Ventana de Informacion
@@ -505,7 +506,7 @@ public class Lista_Vehiculos extends javax.swing.JFrame {
 
                     String identificacion = (String) tblVehiculos.getValueAt(fila, 0);
 
-                    Vehiculo cnx = new Vehiculo(); //Creo una "Conexion"
+                    CtrlVehiculo cnx = new CtrlVehiculo(); //Creo una "Conexion"
                     Vehiculo vehiculo = cnx.buscarVehiculoID(identificacion); //Creo una Instancia de objeto con los datos de la busqueda (devuelve Null si no encuntra)
 
                     //Instancia una Ventana de Edicion
@@ -517,7 +518,7 @@ public class Lista_Vehiculos extends javax.swing.JFrame {
 
                     String identificacion = (String) tblVehiculos.getValueAt(fila, 0);
 
-                    Vehiculo cnx = new Vehiculo(); //Creo una "Conexion"
+                    CtrlVehiculo cnx = new CtrlVehiculo(); //Creo una "Conexion"
                     Vehiculo vehiculo = cnx.buscarVehiculoID(identificacion); //Creo una Instancia de objeto con los datos de la busqueda (devuelve Null si no encuntra)
 
                     //Instancia de una Ventana de Eliminacion

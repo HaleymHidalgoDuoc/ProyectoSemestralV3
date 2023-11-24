@@ -4,6 +4,7 @@
  */
 package proyectosemestral.Vistas.vendendor;
 
+import Controlador.CtrlArriendo;
 import Modelo.Arriendo;
 import Modelo.Empleado;
 import java.util.Date;
@@ -451,7 +452,7 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
         fechaTermino = new Date(txt_fecha.getText());
         precio = Integer.parseInt(txt_precio.getText());
         
-        Arriendo con = new Arriendo();
+        CtrlArriendo con = new CtrlArriendo();
         if(con.guardarArriendo(idEmpleado, idVehiculo, idCliente, descripcion, fechaTermino, precio)){
             System.out.println("Guardado con Exito");
         } else {

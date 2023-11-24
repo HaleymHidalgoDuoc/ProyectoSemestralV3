@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package proyectosemestral.Vistas.vendendor;
 
+import Controlador.CtrlVehiculo;
 import Controlador.DibujarTabla;
 import Modelo.Empleado;
 import Modelo.Vehiculo;
@@ -34,7 +31,7 @@ public class VTablaVehiculos extends javax.swing.JFrame {
         String tipoVehiculo;
         String disponible;
         
-        Vehiculo con = new Vehiculo();
+        CtrlVehiculo con = new CtrlVehiculo();
         modelo.setRowCount(0);
         //Obtengo la Lista de Clientes
         List<Vehiculo> listaVehiculos = con.buscarVehiculos();

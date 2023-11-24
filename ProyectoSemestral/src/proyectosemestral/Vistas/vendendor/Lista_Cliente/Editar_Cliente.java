@@ -4,6 +4,7 @@
  */
 package proyectosemestral.Vistas.vendendor.Lista_Cliente;
 
+import Controlador.CtrlCliente;
 import Modelo.Cliente;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -494,7 +495,7 @@ public class Editar_Cliente extends javax.swing.JFrame {
         cliente.setEstado(true);
         
         //Guardo los datos en la BD
-        Cliente con = new Cliente();
+        CtrlCliente con = new CtrlCliente();
         if(con.actualizarCliente(cliente)){
             JOptionPane.showMessageDialog(this, "SE MODIFICO CORRECTAMENTE","Validación", JOptionPane.WARNING_MESSAGE);
         }else{

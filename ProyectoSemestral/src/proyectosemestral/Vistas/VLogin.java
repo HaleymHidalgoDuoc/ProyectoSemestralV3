@@ -1,5 +1,6 @@
 package proyectosemestral.Vistas;
 
+import Controlador.CtrlEmpleado;
 import Modelo.Empleado;
 import javax.swing.JOptionPane;
 import proyectosemestral.Vistas.administrador.Lista_Vendedores;
@@ -176,8 +177,8 @@ public class VLogin extends javax.swing.JFrame {
         String identificacion = txt_identificacion.getText(); //Obtengo el ID
         String contrasenia = pwdContraseña.getText(); //Obtengo el Pass
         
-        Empleado emp = new Empleado(); //Creo una "Conexion"
-        emp = emp.buscarEmpleadoID(identificacion); //Creo una Instancia de objeto con los datos de la busqueda (devuelve Null si no encuntra)
+        CtrlEmpleado con = new CtrlEmpleado(); //Creo una "Conexion"
+        Empleado emp = con.buscarEmpleadoID(identificacion); //Creo una Instancia de objeto con los datos de la busqueda (devuelve Null si no encuntra)
         
         if(emp.getRutEmpleado() == null){
         JOptionPane.showMessageDialog(this, "USUARIO O CONTRASEÑA ","Validación", JOptionPane.WARNING_MESSAGE);
@@ -216,41 +217,6 @@ public class VLogin extends javax.swing.JFrame {
     private void pwdContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwdContraseñaActionPerformed
  // TODO add your handling code here:
     }//GEN-LAST:event_pwdContraseñaActionPerformed
-
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VLogin().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_login;

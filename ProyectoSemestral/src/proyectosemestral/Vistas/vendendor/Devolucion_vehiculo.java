@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package proyectosemestral.Vistas.vendendor;
 
+import Controlador.CtrlArriendo;
 import Modelo.Arriendo;
 import proyectosemestral.Vistas.VLogin;
 
@@ -289,7 +286,7 @@ public class Devolucion_vehiculo extends javax.swing.JFrame {
         String idCliente = this.txtIdCliente.getText();
         String idVehiculo = this.txtIdVehiculo.getText();
         //cambiar los estado
-        Arriendo con = new Arriendo();
+        CtrlArriendo con = new CtrlArriendo();
         if(con.cambiarEstados(idCliente, idVehiculo)){
             System.out.println("Datos Actualizados");
         } else {

@@ -5,6 +5,7 @@
 package proyectosemestral.Vistas.administrador;
 
 //Vistas
+import Controlador.CtrlEmpleado;
 import proyectosemestral.Vistas.VLogin;
 import proyectosemestral.Vistas.administrador.Vendedor.*;
 import proyectosemestral.Vistas.Administrador.Lista_Vehiculos;
@@ -46,7 +47,7 @@ public class Lista_Vendedores extends javax.swing.JFrame {
         String nrArriendos;
         JButton btnVer, btnEditar, btnEliminar;
         
-        Empleado con = new Empleado();
+        CtrlEmpleado con = new CtrlEmpleado();
         modelo.setRowCount(0);
         
         String id = txt_buscar.getText();
@@ -495,7 +496,7 @@ public class Lista_Vendedores extends javax.swing.JFrame {
 
                     String identificacion = (String) tblClientes.getValueAt(fila, 0);
 
-                    Empleado cnx = new Empleado(); //Creo una "Conexion"
+                    CtrlEmpleado cnx = new CtrlEmpleado(); //Creo una "Conexion"
                     Empleado empleado = cnx.buscarEmpleadoID(identificacion); //Creo una Instancia de objeto con los datos de la busqueda (devuelve Null si no encuntra)
 
                     //Instancia una Ventana de Informacion
@@ -507,7 +508,7 @@ public class Lista_Vendedores extends javax.swing.JFrame {
 
                     String identificacion = (String) tblClientes.getValueAt(fila, 0);
 
-                    Empleado cnx = new Empleado(); //Creo una "Conexion"
+                    CtrlEmpleado cnx = new CtrlEmpleado(); //Creo una "Conexion"
                     Empleado empleado = cnx.buscarEmpleadoID(identificacion); //Creo una Instancia de objeto con los datos de la busqueda (devuelve Null si no encuntra)
 
                     //Instancia una Ventana de Edicion
@@ -519,7 +520,7 @@ public class Lista_Vendedores extends javax.swing.JFrame {
 
                     String identificacion = (String) tblClientes.getValueAt(fila, 0);
 
-                    Empleado cnx = new Empleado(); //Creo una "Conexion"
+                    CtrlEmpleado cnx = new CtrlEmpleado(); //Creo una "Conexion"
                     Empleado empleado = cnx.buscarEmpleadoID(identificacion); //Creo una Instancia de objeto con los datos de la busqueda (devuelve Null si no encuntra)
 
                     //Instancia de una Ventana de Eliminacion
