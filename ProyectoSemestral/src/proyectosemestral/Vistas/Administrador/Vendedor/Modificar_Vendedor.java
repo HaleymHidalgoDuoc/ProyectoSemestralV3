@@ -146,6 +146,7 @@ public class Modificar_Vendedor extends javax.swing.JFrame {
             }
         });
 
+        txtIdentificacion.setEditable(false);
         txtIdentificacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtIdentificacion.setText("321.321.321-7");
         txtIdentificacion.setPreferredSize(new java.awt.Dimension(280, 40));

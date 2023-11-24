@@ -104,4 +104,16 @@ public class Arriendo {
         return "Arriendo{" + "idRegistro=" + idRegistro + ", fechaInicio=" + fechaInicio + ", fechaTermino=" + fechaTermino + ", precio=" + precio + ", descripcion=" + descripcion + ", idCliente=" + idCliente + ", rutVendedor=" + rutVendedor + ", patenteVehiculo=" + patenteVehiculo + '}';
     }
     
+    //Metodos propios
+    public boolean guardarArriendo(String idEmpleado, String idVehiculo, String idCliente, String descripcion, Date fecTer){
+        //Obtengo todos los datos
+        int id_registro;
+        String fechaInicio = "CURDATE()";
+        java.sql.Date fechaTermino = new java.sql.Date(fecTer.getTime());
+        String precio = "(SELECT valor_hora * DATEDIFF('" + fechaTermino + "', CURDATE())" +
+                        "FROM vehiculo" +
+                        "WHERE patente_vehiculo = '" + idVehiculo + "')";
+        
+        
+    }
 }

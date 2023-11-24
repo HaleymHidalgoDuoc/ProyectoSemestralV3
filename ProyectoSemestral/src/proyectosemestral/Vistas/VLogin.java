@@ -205,7 +205,7 @@ public class VLogin extends javax.swing.JFrame {
                 this.setVisible(false);
                 
             } else{
-                JOptionPane.showMessageDialog(this, "USUARIO O CONTRASEÑA ","Validación", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "USUARIO O CONTRASEÑA INVALIDO ","Validación", JOptionPane.WARNING_MESSAGE);
             }  
         } catch (Exception e) {
             System.out.println("Error al listar empleado por id" + e.getMessage());

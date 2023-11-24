@@ -42,7 +42,7 @@ public class Eliminar_Vendedor extends javax.swing.JFrame {
 
         lblTitulo.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("¿Seguro de Eliminar al Cliente?");
+        lblTitulo.setText("¿Seguro de Eliminar al Empleado?");
 
         btnCancelar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         btnCancelar.setText("Cancelar");

@@ -28,15 +28,15 @@
               <Component id="pane_lado_izquierdo" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
                       <Component id="pane_descripcion" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="217" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="pane_identificacion" max="32767" attributes="0"/>
-                          <Component id="pabe_vehiculo" max="32767" attributes="0"/>
                           <Component id="pane_fecha_entrega" alignment="1" max="32767" attributes="0"/>
+                          <Component id="pabe_vehiculo" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
@@ -57,7 +57,7 @@
                       <Component id="pane_lado_izquierdo" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="pane_identificacion" min="-2" max="-2" attributes="0"/>
@@ -93,7 +93,7 @@
                   <Component id="icon_auto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="lbl_autto" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="203" max="32767" attributes="0"/>
                   <Component id="lbl_listadeclientes" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="259" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -270,7 +270,7 @@
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="En este apartado se tiene quen a&#xf1;adir&#xa;una breve descripci&#xf3;n del arriendo &#xa;del veh&#xed;culo."/>
+                <Property name="text" type="java.lang.String" value="Escribe aqui..."/>
               </Properties>
             </Component>
           </SubComponents>
@@ -288,14 +288,12 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                  <Component id="lbl_identificacion" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="txt_identificacion" min="-2" pref="181" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lbl_identificacion" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtIdCliente" min="-2" pref="169" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -304,7 +302,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="lbl_identificacion" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txt_identificacion" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtIdCliente" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -319,7 +317,7 @@
             <Property name="text" type="java.lang.String" value="Identificacion"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txt_identificacion">
+        <Component class="javax.swing.JTextField" name="txtIdCliente">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -339,17 +337,14 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                  <Component id="lbl_vehiculo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="16" max="32767" attributes="0"/>
-                  <Component id="txt_vehiculo" min="-2" pref="181" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="pane_flechita" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="16" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="btnVer" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_vehiculo" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_IdVehiculo" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -358,11 +353,10 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="lbl_vehiculo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="pane_flechita" max="32767" attributes="0"/>
-                      <Component id="txt_vehiculo" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
+                  <Component id="txt_IdVehiculo" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  <Component id="btnVer" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -376,7 +370,7 @@
             <Property name="text" type="java.lang.String" value="Vehiculo"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txt_vehiculo">
+        <Component class="javax.swing.JTextField" name="txt_IdVehiculo">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -384,43 +378,14 @@
             <Property name="text" type="java.lang.String" value="Patente"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JPanel" name="pane_flechita">
+        <Component class="javax.swing.JButton" name="btnVer">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
-            </Property>
+            <Property name="text" type="java.lang.String" value="Ver Vehiculos"/>
           </Properties>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="lbl_flechita" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="lbl_flechita" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="lbl_flechita">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="&gt;"/>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="pane_fecha_entrega">
@@ -434,12 +399,12 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txt_fecha" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
-                      <Component id="lbl_fecha_entrega" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_fecha_entrega" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_fecha" min="-2" pref="170" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -468,7 +433,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="DD/MM/YYYY"/>
+            <Property name="text" type="java.lang.String" value="AAAA/MM/DD"/>
           </Properties>
         </Component>
       </SubComponents>

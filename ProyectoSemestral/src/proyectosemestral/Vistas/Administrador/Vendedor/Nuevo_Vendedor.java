@@ -445,7 +445,6 @@ public class Nuevo_Vendedor extends javax.swing.JFrame {
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
         //Recolectar los Datos
         Empleado empleado = new Empleado();
-        empleado.setRutEmpleado(this.txtIdentificacion.getText());
         
         if(empleado.validarRut(txtIdentificacion.getText())){
             empleado.setRutEmpleado(this.txtIdentificacion.getText());

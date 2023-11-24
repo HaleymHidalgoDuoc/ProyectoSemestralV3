@@ -4,6 +4,9 @@
  */
 package proyectosemestral.Vistas.vendendor;
 
+import Modelo.Arriendo;
+import Modelo.Empleado;
+import java.util.Date;
 import proyectosemestral.Vistas.VLogin;
 
 
@@ -14,9 +17,15 @@ import proyectosemestral.Vistas.VLogin;
  */
 public class Registrar_Arriendo extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Lista_Clientes
-     */
+    //Atributos
+    private Empleado empleado;
+
+    public void setEmpleado(Empleado emp) {
+        this.empleado = emp;
+        lbl_nombe_de.setText(empleado.getNombre() + empleado.getApellidoP());
+        lbl_puesto.setText(empleado.getTipoEmpleado());
+    }
+    
     public Registrar_Arriendo() {
         initComponents();
     }
@@ -44,12 +53,11 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
         tat_descripcion = new javax.swing.JTextArea();
         pane_identificacion = new javax.swing.JPanel();
         lbl_identificacion = new javax.swing.JLabel();
-        txt_identificacion = new javax.swing.JTextField();
+        txtIdCliente = new javax.swing.JTextField();
         pabe_vehiculo = new javax.swing.JPanel();
         lbl_vehiculo = new javax.swing.JLabel();
-        txt_vehiculo = new javax.swing.JTextField();
-        pane_flechita = new javax.swing.JPanel();
-        lbl_flechita = new javax.swing.JLabel();
+        txt_IdVehiculo = new javax.swing.JTextField();
+        btnVer = new javax.swing.JButton();
         pane_fecha_entrega = new javax.swing.JPanel();
         lbl_fecha_entrega = new javax.swing.JLabel();
         txt_fecha = new javax.swing.JTextField();
@@ -87,7 +95,7 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
                 .addComponent(icon_auto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_autto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 203, Short.MAX_VALUE)
                 .addComponent(lbl_listadeclientes)
                 .addGap(259, 259, 259)
                 .addGroup(pane_fondo_superiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,7 +158,7 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
         tat_descripcion.setColumns(20);
         tat_descripcion.setForeground(new java.awt.Color(153, 153, 153));
         tat_descripcion.setRows(5);
-        tat_descripcion.setText("En este apartado se tiene quen añadir\nuna breve descripción del arriendo \ndel vehículo.");
+        tat_descripcion.setText("Escribe aqui...");
         scroll_descripcion.setViewportView(tat_descripcion);
 
         javax.swing.GroupLayout pane_descripcionLayout = new javax.swing.GroupLayout(pane_descripcion);
@@ -179,28 +187,26 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
         lbl_identificacion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lbl_identificacion.setText("Identificacion");
 
-        txt_identificacion.setForeground(new java.awt.Color(204, 204, 204));
-        txt_identificacion.setText("RUT/PASAPORTE");
+        txtIdCliente.setForeground(new java.awt.Color(204, 204, 204));
+        txtIdCliente.setText("RUT/PASAPORTE");
 
         javax.swing.GroupLayout pane_identificacionLayout = new javax.swing.GroupLayout(pane_identificacion);
         pane_identificacion.setLayout(pane_identificacionLayout);
         pane_identificacionLayout.setHorizontalGroup(
             pane_identificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pane_identificacionLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(lbl_identificacion)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_identificacionLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txt_identificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addGroup(pane_identificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_identificacion)
+                    .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
         pane_identificacionLayout.setVerticalGroup(
             pane_identificacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pane_identificacionLayout.createSequentialGroup()
                 .addComponent(lbl_identificacion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_identificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 11, Short.MAX_VALUE))
         );
 
@@ -209,54 +215,37 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
         lbl_vehiculo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lbl_vehiculo.setText("Vehiculo");
 
-        txt_vehiculo.setForeground(new java.awt.Color(204, 204, 204));
-        txt_vehiculo.setText("Patente");
+        txt_IdVehiculo.setForeground(new java.awt.Color(204, 204, 204));
+        txt_IdVehiculo.setText("Patente");
 
-        pane_flechita.setBackground(new java.awt.Color(102, 102, 102));
-
-        lbl_flechita.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_flechita.setText(">");
-
-        javax.swing.GroupLayout pane_flechitaLayout = new javax.swing.GroupLayout(pane_flechita);
-        pane_flechita.setLayout(pane_flechitaLayout);
-        pane_flechitaLayout.setHorizontalGroup(
-            pane_flechitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_flechitaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbl_flechita)
-                .addContainerGap())
-        );
-        pane_flechitaLayout.setVerticalGroup(
-            pane_flechitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pane_flechitaLayout.createSequentialGroup()
-                .addComponent(lbl_flechita)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        btnVer.setText("Ver Vehiculos");
+        btnVer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pabe_vehiculoLayout = new javax.swing.GroupLayout(pabe_vehiculo);
         pabe_vehiculo.setLayout(pabe_vehiculoLayout);
         pabe_vehiculoLayout.setHorizontalGroup(
             pabe_vehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pabe_vehiculoLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(lbl_vehiculo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pabe_vehiculoLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addComponent(txt_vehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pane_flechita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addGroup(pabe_vehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnVer)
+                    .addComponent(lbl_vehiculo)
+                    .addComponent(txt_IdVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
         pabe_vehiculoLayout.setVerticalGroup(
             pabe_vehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pabe_vehiculoLayout.createSequentialGroup()
                 .addComponent(lbl_vehiculo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pabe_vehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pane_flechita, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txt_vehiculo))
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addComponent(txt_IdVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(btnVer)
+                .addGap(15, 15, 15))
         );
 
         pane_fecha_entrega.setBackground(new java.awt.Color(204, 204, 204));
@@ -265,18 +254,18 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
         lbl_fecha_entrega.setText("Fecha de entrega");
 
         txt_fecha.setForeground(new java.awt.Color(204, 204, 204));
-        txt_fecha.setText("DD/MM/YYYY");
+        txt_fecha.setText("AAAA/MM/DD");
 
         javax.swing.GroupLayout pane_fecha_entregaLayout = new javax.swing.GroupLayout(pane_fecha_entrega);
         pane_fecha_entrega.setLayout(pane_fecha_entregaLayout);
         pane_fecha_entregaLayout.setHorizontalGroup(
             pane_fecha_entregaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pane_fecha_entregaLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(20, 20, 20)
                 .addGroup(pane_fecha_entregaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_fecha_entrega))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lbl_fecha_entrega)
+                    .addComponent(txt_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
         pane_fecha_entregaLayout.setVerticalGroup(
             pane_fecha_entregaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -371,14 +360,14 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
                 .addComponent(pane_lado_izquierdo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
+                        .addGap(150, 150, 150)
                         .addComponent(pane_descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 217, Short.MAX_VALUE)
+                        .addGap(200, 200, 200)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(pane_identificacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pabe_vehiculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pane_fecha_entrega, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(213, 213, 213))
+                            .addComponent(pane_fecha_entrega, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pabe_vehiculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_confirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -393,7 +382,7 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pane_lado_izquierdo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(113, 113, 113)
+                        .addGap(100, 100, 100)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(pane_identificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -412,7 +401,25 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_confirmarActionPerformed
-        // TODO add your handling code here:
+        //Recolecto los datos
+        String idCliente, idVehiculo, idEmpleado, descripcion;
+        Date fechaTermino;
+        
+        idEmpleado = empleado.getRutEmpleado();
+        idVehiculo = txt_IdVehiculo.getText();
+        idCliente = txtIdCliente.getText();
+        descripcion = tat_descripcion.getText();
+        fechaTermino = new Date(txt_fecha.getText());
+        
+        Arriendo con = new Arriendo();
+        if(con.guardarArriendo(idEmpleado, idVehiculo, idCliente, descripcion, fechaTermino)){
+            System.out.println("Guardado con Exito");
+        } else {
+            System.out.println("Error al Guardar");
+        }
+        
+       
+        
     }//GEN-LAST:event_btn_confirmarActionPerformed
 
     private void btn_clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clientesActionPerformed
@@ -443,73 +450,15 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btn_cerrar_sessionActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registrar_Arriendo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registrar_Arriendo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registrar_Arriendo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registrar_Arriendo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Registrar_Arriendo().setVisible(true);
-            }
-        });
-    }
+    private void btnVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerActionPerformed
+        // TODO add your handling code here:
+        VTablaVehiculos tabla = new VTablaVehiculos();
+        tabla.setEmpleado(this.empleado);
+        tabla.setVisible(true);
+    }//GEN-LAST:event_btnVerActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnVer;
     private javax.swing.JButton btn_cerrar_session;
     private javax.swing.JButton btn_clientes;
     private javax.swing.JButton btn_confirmar;
@@ -520,7 +469,6 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_autto;
     private javax.swing.JLabel lbl_descrpcion;
     private javax.swing.JLabel lbl_fecha_entrega;
-    private javax.swing.JLabel lbl_flechita;
     private javax.swing.JLabel lbl_identificacion;
     private javax.swing.JLabel lbl_listadeclientes;
     private javax.swing.JLabel lbl_nombe_de;
@@ -529,15 +477,14 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
     private javax.swing.JPanel pabe_vehiculo;
     private javax.swing.JPanel pane_descripcion;
     private javax.swing.JPanel pane_fecha_entrega;
-    private javax.swing.JPanel pane_flechita;
     private javax.swing.JPanel pane_fondo_descripcion;
     private javax.swing.JPanel pane_fondo_superior;
     private javax.swing.JPanel pane_identificacion;
     private javax.swing.JPanel pane_lado_izquierdo;
     private javax.swing.JScrollPane scroll_descripcion;
     private javax.swing.JTextArea tat_descripcion;
+    private javax.swing.JTextField txtIdCliente;
+    private javax.swing.JTextField txt_IdVehiculo;
     private javax.swing.JTextField txt_fecha;
-    private javax.swing.JTextField txt_identificacion;
-    private javax.swing.JTextField txt_vehiculo;
     // End of variables declaration//GEN-END:variables
 }

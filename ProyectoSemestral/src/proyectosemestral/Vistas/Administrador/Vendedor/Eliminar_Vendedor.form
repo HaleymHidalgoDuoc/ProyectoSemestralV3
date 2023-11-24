@@ -59,7 +59,7 @@
           <Font name="Dialog" size="36" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="&#xbf;Seguro de Eliminar al Cliente?"/>
+        <Property name="text" type="java.lang.String" value="&#xbf;Seguro de Eliminar al Empleado?"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnCancelar">
