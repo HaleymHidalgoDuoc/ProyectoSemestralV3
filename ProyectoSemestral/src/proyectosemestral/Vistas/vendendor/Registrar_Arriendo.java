@@ -470,7 +470,7 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
         //Recolecto los datos
         String idCliente = null, idVehiculo = null, idEmpleado, descripcion;
         Date fechaTermino = null;
-        int precio;
+        int precio = 0;
         
         Cliente cliente = new Cliente();
         Arriendo arriendo = new Arriendo();
@@ -504,14 +504,18 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
         }
        
         
-        
+        if(precio >=0 && precio <=  2147483647){
         precio = Integer.parseInt(txt_precio.getText());
+        }else{
+        JOptionPane.showMessageDialog(this, "EL Precio ingresado es INVALIDO","Validación", JOptionPane.WARNING_MESSAGE);      
+            }
+        
         
         CtrlArriendo con = new CtrlArriendo();
         if(con.guardarArriendo(idEmpleado, idVehiculo, idCliente, descripcion, fechaTermino, precio)){
-            System.out.println("Guardado con Exito");
+           JOptionPane.showMessageDialog(this, "LOS DATOS FUERON GUARDADOS","Validación", JOptionPane.WARNING_MESSAGE); 
         } else {
-            System.out.println("Error al Guardar");
+        JOptionPane.showMessageDialog(this, "ERROR AL INGRESAR LOS DATOS","Validación", JOptionPane.WARNING_MESSAGE);  
         }
         
        
