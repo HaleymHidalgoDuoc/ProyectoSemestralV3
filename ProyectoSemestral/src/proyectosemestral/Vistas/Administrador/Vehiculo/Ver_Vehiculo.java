@@ -5,6 +5,8 @@
 package proyectosemestral.Vistas.administrador.Vehiculo;
 
 import Modelo.Vehiculo;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 /**
@@ -18,13 +20,13 @@ public class Ver_Vehiculo extends javax.swing.JFrame {
 
     public void setVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
-        
         //Setear los datos del formulario
         this.txtPatente.setText(vehiculo.getPatente());
         this.txtMarca.setText(vehiculo.getMarca());
         this.txtNrMotor.setText(vehiculo.getNumMotor());
         this.txtNrChasis.setText(vehiculo.getNumChasis());
         this.txtModelo.setText(vehiculo.getModelo());
+        this.txtañio.setText(vehiculo.getAnio() + "");
         this.txtCombustible.setText(vehiculo.getTipoCombustible());
         this.txtVehiculo.setText(vehiculo.getTipoVehiculo()); 
     }
@@ -185,7 +187,7 @@ public class Ver_Vehiculo extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblNrChasis, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                .addComponent(lblNrChasis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -332,7 +334,7 @@ public class Ver_Vehiculo extends javax.swing.JFrame {
         lblañio.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblañio.setForeground(new java.awt.Color(255, 255, 255));
         lblañio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblañio.setText("año");
+        lblañio.setText("Año");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -395,9 +397,9 @@ public class Ver_Vehiculo extends javax.swing.JFrame {
                                 .addComponent(txtNrMotor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE))
                                 .addGap(0, 0, 0)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtañio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

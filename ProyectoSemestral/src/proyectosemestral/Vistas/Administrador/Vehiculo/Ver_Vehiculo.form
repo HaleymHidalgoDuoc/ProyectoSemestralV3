@@ -81,9 +81,9 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jPanel9" max="32767" attributes="0"/>
-                                      <Component id="jPanel7" max="32767" attributes="0"/>
-                                      <Component id="jPanel12" pref="0" max="32767" attributes="0"/>
+                                      <Component id="jPanel9" pref="286" max="32767" attributes="0"/>
+                                      <Component id="jPanel7" pref="286" max="32767" attributes="0"/>
+                                      <Component id="jPanel12" pref="286" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -339,7 +339,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblNrChasis" pref="268" max="32767" attributes="0"/>
+                      <Component id="lblNrChasis" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -641,7 +641,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="a&#xf1;o"/>
+                <Property name="text" type="java.lang.String" value="A&#xf1;o"/>
               </Properties>
             </Component>
           </SubComponents>

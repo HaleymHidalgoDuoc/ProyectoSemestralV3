@@ -511,6 +511,7 @@ public class Nuevo_Vehiculo extends javax.swing.JFrame {
         vehiculo.setMarca(this.txtMarca.getText());
         vehiculo.setModelo(this.txtModelo.getText());
         vehiculo.setDisponibilidad(true);
+        vehiculo.setAnio(Integer.parseInt(this.txt_anio.getText()));
         //Tipo Vehiculo
         if(opcAutomovil.isSelected()){
             vehiculo.setTipoVehiculo("AUTOMOVIL");

@@ -106,7 +106,7 @@
                           </Group>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtModelo1" max="32767" attributes="0"/>
+                              <Component id="txtModelo" max="32767" attributes="0"/>
                               <Component id="txtMarca" max="32767" attributes="0"/>
                               <Component id="txt_anio" max="32767" attributes="0"/>
                           </Group>
@@ -148,7 +148,7 @@
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanel9" pref="39" max="32767" attributes="0"/>
-                      <Component id="txtModelo1" pref="0" max="32767" attributes="0"/>
+                      <Component id="txtModelo" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -729,7 +729,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JTextField" name="txtModelo1">
+        <Component class="javax.swing.JTextField" name="txtModelo">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Modelo"/>
@@ -738,7 +738,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtModelo1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtModeloActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

@@ -19,7 +19,8 @@ public class Modificar_Vehiculo extends javax.swing.JFrame {
         this.txtMarca.setText(vehiculo.getMarca());
         this.txtNrMotor.setText(vehiculo.getNumMotor());
         this.txtNrChasis.setText(vehiculo.getNumChasis());
-        this.txt_anio.setText(vehiculo.getModelo());
+        this.txtModelo.setText(vehiculo.getModelo());
+        this.txt_anio.setText(vehiculo.getAnio() + "");
         //TipoVehiculo
         if(vehiculo.getTipoVehiculo().equals("AUTOMOVIL")){
             opcAutomovil.setSelected(true);
@@ -85,7 +86,7 @@ public class Modificar_Vehiculo extends javax.swing.JFrame {
         opcElectrico = new javax.swing.JRadioButton();
         jPanel12 = new javax.swing.JPanel();
         lblañio = new javax.swing.JLabel();
-        txtModelo1 = new javax.swing.JTextField();
+        txtModelo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nuevo Vehiculo");
@@ -391,12 +392,12 @@ public class Modificar_Vehiculo extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        txtModelo1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtModelo1.setText("Modelo");
-        txtModelo1.setPreferredSize(new java.awt.Dimension(280, 40));
-        txtModelo1.addActionListener(new java.awt.event.ActionListener() {
+        txtModelo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtModelo.setText("Modelo");
+        txtModelo.setPreferredSize(new java.awt.Dimension(280, 40));
+        txtModelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtModelo1ActionPerformed(evt);
+                txtModeloActionPerformed(evt);
             }
         });
 
@@ -449,7 +450,7 @@ public class Modificar_Vehiculo extends javax.swing.JFrame {
                             .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE))
                         .addGap(0, 0, 0)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtModelo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtModelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtMarca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txt_anio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(94, 94, 94))
@@ -480,7 +481,7 @@ public class Modificar_Vehiculo extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                    .addComponent(txtModelo1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
@@ -535,7 +536,9 @@ public class Modificar_Vehiculo extends javax.swing.JFrame {
         vehiculo.setNumMotor(this.txtNrMotor.getText());
         vehiculo.setNumChasis(this.txtNrChasis.getText());
         vehiculo.setMarca(this.txtMarca.getText());
-        vehiculo.setModelo(this.txt_anio.getText());
+        vehiculo.setModelo(this.txtModelo.getText());
+        vehiculo.setAnio(Integer.parseInt(this.txt_anio.getText()));
+        vehiculo.setDisponibilidad(this.vehiculo.getDisponibilidad());
         //Tipo Vehiculo
         if(opcAutomovil.isSelected()){
             vehiculo.setTipoVehiculo("AUTOMOVIL");
@@ -563,9 +566,9 @@ public class Modificar_Vehiculo extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btn_aceptarActionPerformed
 
-    private void txtModelo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtModelo1ActionPerformed
+    private void txtModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtModeloActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtModelo1ActionPerformed
+    }//GEN-LAST:event_txtModeloActionPerformed
 
     private void txt_anioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_anioActionPerformed
         // TODO add your handling code here:
@@ -644,7 +647,7 @@ public class Modificar_Vehiculo extends javax.swing.JFrame {
     private javax.swing.JRadioButton opcGasolina;
     private javax.swing.JRadioButton opcHidrogeno;
     private javax.swing.JTextField txtMarca;
-    private javax.swing.JTextField txtModelo1;
+    private javax.swing.JTextField txtModelo;
     private javax.swing.JTextField txtNrChasis;
     private javax.swing.JTextField txtNrMotor;
     private javax.swing.JTextField txtPatente;
