@@ -170,6 +170,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txt_identificacion">
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_identificacionMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_identificacionActionPerformed"/>
           </Events>
         </Component>
@@ -202,9 +203,6 @@
           </Events>
         </Component>
         <Component class="javax.swing.JPasswordField" name="pwdContrase&#xf1;a">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pwdContrase&#xf1;aActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="icon_logo">
         </Component>

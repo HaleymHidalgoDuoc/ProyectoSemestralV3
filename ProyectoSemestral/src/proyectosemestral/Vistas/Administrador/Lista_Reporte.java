@@ -5,6 +5,7 @@
 package proyectosemestral.Vistas.administrador;
 
 import Modelo.Empleado;
+import proyectosemestral.Vistas.Administrador.Reporte.IngreseID;
 import proyectosemestral.Vistas.VLogin;
 import proyectosemestral.Vistas.administrador.Reporte.Arriendo_Vehiculos;
 import proyectosemestral.Vistas.administrador.Reporte.Top5;
@@ -46,14 +47,14 @@ public class Lista_Reporte extends javax.swing.JFrame {
         lblTitulo3 = new javax.swing.JLabel();
         btnGenerarReporte3 = new javax.swing.JButton();
         pane_Reporte1 = new javax.swing.JPanel();
-        lblTitulo1 = new javax.swing.JLabel();
-        btnGenerarReporte1 = new javax.swing.JButton();
+        lblArriendoVehiculo = new javax.swing.JLabel();
+        btnGenerarReporteVehiculo = new javax.swing.JButton();
         pane_Reporte4 = new javax.swing.JPanel();
         lblTitulo4 = new javax.swing.JLabel();
         btnGenerarReporte4 = new javax.swing.JButton();
         pane_Reporte2 = new javax.swing.JPanel();
-        lblTitulo2 = new javax.swing.JLabel();
-        btnGenerarReporte2 = new javax.swing.JButton();
+        lblArriendoVendedor = new javax.swing.JLabel();
+        btnGenerarReporteVendedor = new javax.swing.JButton();
         pane_parte_arriba = new javax.swing.JPanel();
         icon_auto = new javax.swing.JLabel();
         lbl_autto = new javax.swing.JLabel();
@@ -113,15 +114,15 @@ public class Lista_Reporte extends javax.swing.JFrame {
         pane_Reporte1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Reporte", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
         pane_Reporte1.setPreferredSize(new java.awt.Dimension(250, 200));
 
-        lblTitulo1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lblTitulo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo1.setText("Arriendo Por Vehiculo");
+        lblArriendoVehiculo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblArriendoVehiculo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblArriendoVehiculo.setText("Arriendos Por Vehiculo");
 
-        btnGenerarReporte1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnGenerarReporte1.setText("Generar Reporte");
-        btnGenerarReporte1.addActionListener(new java.awt.event.ActionListener() {
+        btnGenerarReporteVehiculo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnGenerarReporteVehiculo.setText("Generar Reporte");
+        btnGenerarReporteVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenerarReporte1ActionPerformed(evt);
+                btnGenerarReporteVehiculoActionPerformed(evt);
             }
         });
 
@@ -131,20 +132,20 @@ public class Lista_Reporte extends javax.swing.JFrame {
             pane_Reporte1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pane_Reporte1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblTitulo1, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                .addComponent(lblArriendoVehiculo, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_Reporte1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnGenerarReporte1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGenerarReporteVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
         );
         pane_Reporte1Layout.setVerticalGroup(
             pane_Reporte1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pane_Reporte1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblArriendoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGenerarReporte1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGenerarReporteVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
@@ -191,15 +192,15 @@ public class Lista_Reporte extends javax.swing.JFrame {
         pane_Reporte2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Reporte", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
         pane_Reporte2.setPreferredSize(new java.awt.Dimension(250, 200));
 
-        lblTitulo2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lblTitulo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo2.setText("Vehículos Arrendados por Vendedor");
+        lblArriendoVendedor.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblArriendoVendedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblArriendoVendedor.setText("Arriendos Por Vendedor");
 
-        btnGenerarReporte2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnGenerarReporte2.setText("Generar Reporte");
-        btnGenerarReporte2.addActionListener(new java.awt.event.ActionListener() {
+        btnGenerarReporteVendedor.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnGenerarReporteVendedor.setText("Generar Reporte");
+        btnGenerarReporteVendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenerarReporte2ActionPerformed(evt);
+                btnGenerarReporteVendedorActionPerformed(evt);
             }
         });
 
@@ -208,21 +209,22 @@ public class Lista_Reporte extends javax.swing.JFrame {
         pane_Reporte2Layout.setHorizontalGroup(
             pane_Reporte2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pane_Reporte2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTitulo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(pane_Reporte2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(btnGenerarReporte2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+                .addGroup(pane_Reporte2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pane_Reporte2Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(btnGenerarReporteVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pane_Reporte2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblArriendoVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
         pane_Reporte2Layout.setVerticalGroup(
             pane_Reporte2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pane_Reporte2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblTitulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblArriendoVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                .addComponent(btnGenerarReporte2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGenerarReporteVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
         );
 
@@ -399,22 +401,20 @@ public class Lista_Reporte extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGenerarReporte1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporte1ActionPerformed
-        // TODO add your handling code here:
-        
-        new Arriendo_Vehiculos().setVisible(true);
-        
-        this.dispose();
+    private void btnGenerarReporteVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteVehiculoActionPerformed
+        //Obtengo el dato que voy a mandar
+        IngreseID venID = new IngreseID();
+        venID.setTipo(lblArriendoVehiculo.getText());
+        venID.setVisible(true);
+    }//GEN-LAST:event_btnGenerarReporteVehiculoActionPerformed
 
-    }//GEN-LAST:event_btnGenerarReporte1ActionPerformed
-
-    private void btnGenerarReporte2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporte2ActionPerformed
+    private void btnGenerarReporteVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteVendedorActionPerformed
         // TODO add your handling code here:
         new Vehiculos_por_Vendedor().setVisible(true);
         
         this.dispose();
 
-    }//GEN-LAST:event_btnGenerarReporte2ActionPerformed
+    }//GEN-LAST:event_btnGenerarReporteVendedorActionPerformed
 
     private void btnGenerarReporte3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporte3ActionPerformed
         // TODO add your handling code here:
@@ -460,18 +460,18 @@ public class Lista_Reporte extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_cerrar_sessionActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGenerarReporte1;
-    private javax.swing.JButton btnGenerarReporte2;
     private javax.swing.JButton btnGenerarReporte3;
     private javax.swing.JButton btnGenerarReporte4;
+    private javax.swing.JButton btnGenerarReporteVehiculo;
+    private javax.swing.JButton btnGenerarReporteVendedor;
     private javax.swing.JButton btn_Reporte;
     private javax.swing.JButton btn_Vehiculo;
     private javax.swing.JButton btn_Vendedores;
     private javax.swing.JButton btn_cerrar_session;
     private javax.swing.JLabel icon_auto;
+    private javax.swing.JLabel lblArriendoVehiculo;
+    private javax.swing.JLabel lblArriendoVendedor;
     private javax.swing.JLabel lblTipoEmpleado;
-    private javax.swing.JLabel lblTitulo1;
-    private javax.swing.JLabel lblTitulo2;
     private javax.swing.JLabel lblTitulo3;
     private javax.swing.JLabel lblTitulo4;
     private javax.swing.JLabel lbl_autto;

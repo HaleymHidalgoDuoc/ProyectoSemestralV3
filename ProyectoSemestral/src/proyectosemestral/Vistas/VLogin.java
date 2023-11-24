@@ -54,6 +54,11 @@ public class VLogin extends javax.swing.JFrame {
         lbl_Identificacion.setText("Identificación");
         lbl_Identificacion.setToolTipText("");
 
+        txt_identificacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_identificacionMouseClicked(evt);
+            }
+        });
         txt_identificacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_identificacionActionPerformed(evt);
@@ -74,14 +79,6 @@ public class VLogin extends javax.swing.JFrame {
                 btn_loginActionPerformed(evt);
             }
         });
-
-        pwdContraseña.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pwdContraseñaActionPerformed(evt);
-            }
-        });
-
-        icon_logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\angel\\Downloads\\car-removebg-preview.png")); // NOI18N
 
         javax.swing.GroupLayout pan_loginLayout = new javax.swing.GroupLayout(pan_login);
         pan_login.setLayout(pan_loginLayout);
@@ -161,7 +158,7 @@ public class VLogin extends javax.swing.JFrame {
                         .addGap(267, 267, 267))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(pan_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(168, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -182,41 +179,39 @@ public class VLogin extends javax.swing.JFrame {
         
         if(emp.getRutEmpleado() == null){
         JOptionPane.showMessageDialog(this, "USUARIO O CONTRASEÑA ","Validación", JOptionPane.WARNING_MESSAGE);
-        }else
-        
-        try {
-            if( emp.getRutEmpleado().equals(identificacion) &&
-                emp.getContrasenia().equals(contrasenia) &&
-                emp.getTipoEmpleado().equals("VENDEDOR")){
-                
-                //Inicia una instancia de la ventana Vendedor
-                Lista_Clientes ventVendedor = new Lista_Clientes();
-                ventVendedor.setEmpleado(emp);
-                ventVendedor.setVisible(true);
-                this.setVisible(false);
-                
-            }else if(emp.getRutEmpleado().equals(identificacion) &&
-                emp.getContrasenia().equals(contrasenia) &&
-                emp.getTipoEmpleado().equals("ADMINISTRADOR")){
-                
-                //Inicia una instancia de la ventana 
-                Lista_Vendedores ventAdministrador = new Lista_Vendedores();
-                ventAdministrador.setEmpleado(emp); 
-                ventAdministrador.setVisible(true);
-                this.setVisible(false);
-                
-            } else{
-                JOptionPane.showMessageDialog(this, "USUARIO O CONTRASEÑA INVALIDO ","Validación", JOptionPane.WARNING_MESSAGE);
-            }  
-        } catch (Exception e) {
-            System.out.println("Error al listar empleado por id" + e.getMessage());
-        }
-        
+        } else{
+            try {
+                if( emp.getRutEmpleado().equals(identificacion) &&
+                    emp.getContrasenia().equals(contrasenia) &&
+                    emp.getTipoEmpleado().equals("VENDEDOR")){
+
+                    //Inicia una instancia de la ventana Vendedor
+                    Lista_Clientes ventVendedor = new Lista_Clientes();
+                    ventVendedor.setEmpleado(emp);
+                    ventVendedor.setVisible(true);
+                    this.setVisible(false);
+
+                }else if(emp.getRutEmpleado().equals(identificacion) &&
+                    emp.getContrasenia().equals(contrasenia) &&
+                    emp.getTipoEmpleado().equals("ADMINISTRADOR"))
+                {
+                    //Inicia una instancia de la ventana 
+                    Lista_Vendedores ventAdministrador = new Lista_Vendedores();
+                    ventAdministrador.setEmpleado(emp); 
+                    ventAdministrador.setVisible(true);
+                    this.setVisible(false);
+                } else {
+                    JOptionPane.showMessageDialog(this, "USUARIO O CONTRASEÑA INVALIDO ","Validación", JOptionPane.WARNING_MESSAGE);
+                }  
+            } catch (Exception e) {
+                System.out.println("Error al listar empleado por id" + e.getMessage());
+            }
+        }    
     }//GEN-LAST:event_btn_loginActionPerformed
 
-    private void pwdContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwdContraseñaActionPerformed
- // TODO add your handling code here:
-    }//GEN-LAST:event_pwdContraseñaActionPerformed
+    private void txt_identificacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_identificacionMouseClicked
+        this.txt_identificacion.setText("");
+    }//GEN-LAST:event_txt_identificacionMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_login;

@@ -1,10 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package proyectosemestral.Vistas.administrador.Reporte;
 
-import Controlador.DibujarTabla;
+import Controlador.CtrlArriendo;
 import Modelo.Arriendo;
 import Modelo.Empleado;
 import java.util.Date;
@@ -23,17 +19,21 @@ import proyectosemestral.Vistas.administrador.Lista_Vendedores;
  */
 public class Arriendo_Vehiculos extends javax.swing.JFrame {
 
-    private List<Arriendo> listaArriendos;
+    //Atributos
+    private String idVehiculo;
 
-    public void setListaArriendos(List<Arriendo> listaArriendos) {
-        this.listaArriendos = listaArriendos;
-        //Setea los Datos de la Tabla
-        
+    public void setIdVehiculo(String idVeh) {
+        this.idVehiculo = idVeh;
+        actualizarTabla();
     }
+
+    
     
     //Customer
     private void actualizarTabla(){
         //Declaraciones Necesarias
+        CtrlArriendo con = new CtrlArriendo();
+        List<Arriendo> listaArriendos = con.listarArriendosVehiculos(this.idVehiculo);
         DefaultTableModel modelo = (DefaultTableModel) tblReporte.getModel();
         modelo.setRowCount(0);
         String id_vendedor;
@@ -44,6 +44,8 @@ public class Arriendo_Vehiculos extends javax.swing.JFrame {
             modelo.addRow(new Object[] {id_vendedor, fecha_inicio});
         }
         tblReporte.setModel(modelo);
+        lblContador.setText(" Total: " + listaArriendos.size());
+        lblPatente.setText(idVehiculo);
     }
     
     public Arriendo_Vehiculos() {
@@ -65,31 +67,20 @@ public class Arriendo_Vehiculos extends javax.swing.JFrame {
         btnVolver = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblReporte = new javax.swing.JTable();
-        pane_parte_arriba = new javax.swing.JPanel();
-        icon_auto = new javax.swing.JLabel();
-        lbl_autto = new javax.swing.JLabel();
-        lbl_listadeclientes = new javax.swing.JLabel();
-        lbl_nombe_de = new javax.swing.JLabel();
-        lbl_vendedor = new javax.swing.JLabel();
-        lbl_icon_persona = new javax.swing.JLabel();
-        pane_lado_izquierdo7 = new javax.swing.JPanel();
-        btn_Vendedores7 = new javax.swing.JButton();
-        btn_Vehiculo7 = new javax.swing.JButton();
-        btn_Reporte7 = new javax.swing.JButton();
-        btn_cerrar_session7 = new javax.swing.JButton();
+        lblPatente = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Administrador - Reportes");
 
         pnlTabla.setBackground(new java.awt.Color(153, 153, 153));
-        pnlTabla.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), " AA1234 ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 18))); // NOI18N
+        pnlTabla.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 18))); // NOI18N
 
         jPanel21.setBackground(new java.awt.Color(102, 102, 102));
 
         lblContador.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblContador.setForeground(new java.awt.Color(204, 204, 204));
         lblContador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblContador.setText("Total: 5");
+        lblContador.setText("Total: 0");
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -168,157 +159,29 @@ public class Arriendo_Vehiculos extends javax.swing.JFrame {
                 .addGap(10, 10, 10))
         );
 
-        pane_parte_arriba.setBackground(new java.awt.Color(204, 204, 204));
-
-        icon_auto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/car-removebg-preview.png"))); // NOI18N
-
-        lbl_autto.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_autto.setText("AUTTO");
-
-        lbl_listadeclientes.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lbl_listadeclientes.setText("ARRIENDO POR VEHICULOS");
-
-        lbl_nombe_de.setText("Angel Perugini");
-
-        lbl_vendedor.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lbl_vendedor.setText("Vendedor");
-
-        lbl_icon_persona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icon_person3.png"))); // NOI18N
-
-        javax.swing.GroupLayout pane_parte_arribaLayout = new javax.swing.GroupLayout(pane_parte_arriba);
-        pane_parte_arriba.setLayout(pane_parte_arribaLayout);
-        pane_parte_arribaLayout.setHorizontalGroup(
-            pane_parte_arribaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pane_parte_arribaLayout.createSequentialGroup()
-                .addComponent(icon_auto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbl_autto)
-                .addGap(181, 181, 181)
-                .addComponent(lbl_listadeclientes)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pane_parte_arribaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lbl_nombe_de, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbl_vendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
-                .addComponent(lbl_icon_persona)
-                .addGap(41, 41, 41))
-        );
-        pane_parte_arribaLayout.setVerticalGroup(
-            pane_parte_arribaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_parte_arribaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pane_parte_arribaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(icon_auto)
-                    .addGroup(pane_parte_arribaLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(lbl_nombe_de)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbl_vendedor))
-                    .addGroup(pane_parte_arribaLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(lbl_icon_persona)))
-                .addGap(34, 34, 34))
-            .addGroup(pane_parte_arribaLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(pane_parte_arribaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_autto)
-                    .addComponent(lbl_listadeclientes))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        pane_lado_izquierdo7.setBackground(new java.awt.Color(102, 102, 102));
-
-        btn_Vendedores7.setBackground(new java.awt.Color(102, 102, 102));
-        btn_Vendedores7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_Vendedores7.setText("Vendedores");
-        btn_Vendedores7.setBorder(null);
-        btn_Vendedores7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_Vendedores7ActionPerformed(evt);
-            }
-        });
-
-        btn_Vehiculo7.setBackground(new java.awt.Color(102, 102, 102));
-        btn_Vehiculo7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_Vehiculo7.setText("Vehiculo");
-        btn_Vehiculo7.setBorder(null);
-        btn_Vehiculo7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_Vehiculo7ActionPerformed(evt);
-            }
-        });
-
-        btn_Reporte7.setBackground(new java.awt.Color(102, 102, 102));
-        btn_Reporte7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_Reporte7.setText("Reporte");
-        btn_Reporte7.setBorder(null);
-        btn_Reporte7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_Reporte7ActionPerformed(evt);
-            }
-        });
-
-        btn_cerrar_session7.setBackground(new java.awt.Color(204, 204, 204));
-        btn_cerrar_session7.setText("CERRAR SESION");
-        btn_cerrar_session7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cerrar_session7ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pane_lado_izquierdo7Layout = new javax.swing.GroupLayout(pane_lado_izquierdo7);
-        pane_lado_izquierdo7.setLayout(pane_lado_izquierdo7Layout);
-        pane_lado_izquierdo7Layout.setHorizontalGroup(
-            pane_lado_izquierdo7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pane_lado_izquierdo7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pane_lado_izquierdo7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_Vendedores7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_Vehiculo7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
-                    .addComponent(btn_Reporte7, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
-                .addContainerGap())
-            .addComponent(btn_cerrar_session7, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-        );
-        pane_lado_izquierdo7Layout.setVerticalGroup(
-            pane_lado_izquierdo7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pane_lado_izquierdo7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btn_Vendedores7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
-                .addComponent(btn_Vehiculo7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
-                .addComponent(btn_Reporte7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
-                .addComponent(btn_cerrar_session7, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
-        );
+        lblPatente.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblPatente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPatente.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(pane_lado_izquierdo7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(208, 208, 208)
-                        .addComponent(pnlTabla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 239, Short.MAX_VALUE))
-                    .addComponent(pane_parte_arriba, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pnlTabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblPatente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(pane_parte_arriba, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(pnlTabla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(pane_lado_izquierdo7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                .addGap(18, 18, 18)
+                .addComponent(lblPatente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(pnlTabla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
 
         pack();
@@ -332,84 +195,12 @@ public class Arriendo_Vehiculos extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
-    private void btn_Vendedores7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Vendedores7ActionPerformed
-        // TODO add your handling code here:
-        new Lista_Vendedores().setVisible(true);
-
-        this.dispose();
-    }//GEN-LAST:event_btn_Vendedores7ActionPerformed
-
-    private void btn_Vehiculo7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Vehiculo7ActionPerformed
-        // TODO add your handling code here:
-        new Lista_Vehiculos().setVisible(true);
-
-        this.dispose();
-    }//GEN-LAST:event_btn_Vehiculo7ActionPerformed
-
-    private void btn_Reporte7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Reporte7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_Reporte7ActionPerformed
-
-    private void btn_cerrar_session7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrar_session7ActionPerformed
-        // TODO add your handling code here:
-        VLogin Ventana = new VLogin();
-
-        Ventana.setVisible(true);
-
-        this.dispose();
-    }//GEN-LAST:event_btn_cerrar_session7ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Arriendo_Vehiculos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Arriendo_Vehiculos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Arriendo_Vehiculos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Arriendo_Vehiculos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Arriendo_Vehiculos().setVisible(true);
-            }
-        });
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVolver;
-    private javax.swing.JButton btn_Reporte7;
-    private javax.swing.JButton btn_Vehiculo7;
-    private javax.swing.JButton btn_Vendedores7;
-    private javax.swing.JButton btn_cerrar_session7;
-    private javax.swing.JLabel icon_auto;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblContador;
-    private javax.swing.JLabel lbl_autto;
-    private javax.swing.JLabel lbl_icon_persona;
-    private javax.swing.JLabel lbl_listadeclientes;
-    private javax.swing.JLabel lbl_nombe_de;
-    private javax.swing.JLabel lbl_vendedor;
-    private javax.swing.JPanel pane_lado_izquierdo7;
-    private javax.swing.JPanel pane_parte_arriba;
+    private javax.swing.JLabel lblPatente;
     private javax.swing.JPanel pnlTabla;
     private javax.swing.JTable tblReporte;
     // End of variables declaration//GEN-END:variables

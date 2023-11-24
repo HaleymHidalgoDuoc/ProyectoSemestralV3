@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.Scanner;
 
 /**
  *
@@ -21,6 +22,7 @@ public class Arriendo {
     private String rutVendedor;
     private String patenteVehiculo;
     
+    
     //Constructor
     public Arriendo(int idRegistro, Date fechaInicio, Date fechaTermino, int precio, String descripcion, String idCliente, String rutVendedor, String patenteVehiculo) {
         this.idRegistro = idRegistro;
@@ -35,6 +37,8 @@ public class Arriendo {
 
     public Arriendo() {
     }
+    
+    
     
         
     //Accesadores y Mutadores
