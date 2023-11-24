@@ -276,6 +276,11 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
 
         txtIdentificacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtIdentificacion.setText(" Pasaporte / RUT");
+        txtIdentificacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtIdentificacionMouseClicked(evt);
+            }
+        });
         txtIdentificacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdentificacionActionPerformed(evt);
@@ -284,9 +289,19 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
 
         txtNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNombre.setText("Nombre");
+        txtNombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNombreMouseClicked(evt);
+            }
+        });
 
         txtApellidop.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtApellidop.setText("Apellido");
+        txtApellidop.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtApellidopMouseClicked(evt);
+            }
+        });
 
         pane_fondo_Nombre1.setBackground(new java.awt.Color(176, 176, 176));
 
@@ -313,6 +328,11 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
 
         txtApellidom.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtApellidom.setText("Apellido");
+        txtApellidom.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtApellidomMouseClicked(evt);
+            }
+        });
         txtApellidom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtApellidomActionPerformed(evt);
@@ -344,15 +364,40 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
 
         txtFechaNacimiento.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtFechaNacimiento.setText("AAAA - MM - DD");
+        txtFechaNacimiento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtFechaNacimientoMouseClicked(evt);
+            }
+        });
 
         txtDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtDireccion.setText(" Direccion");
+        txtDireccion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtDireccionMouseClicked(evt);
+            }
+        });
+        txtDireccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDireccionActionPerformed(evt);
+            }
+        });
 
         txtEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtEmail.setText("EXAMPLE@DUOCUC.CL");
+        txtEmail.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtEmailMouseClicked(evt);
+            }
+        });
 
         txtNrTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNrTelefono.setText("+56  9 5555 5555");
+        txtNrTelefono.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNrTelefonoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pane_panel_principalLayout = new javax.swing.GroupLayout(pane_panel_principal);
         pane_panel_principal.setLayout(pane_panel_principalLayout);
@@ -444,7 +489,7 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
                 .addGroup(pane_panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pane_fondo_Nombre3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtApellidom, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
+                .addGap(20, 20, 20)
                 .addGroup(pane_panel_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(pane_fondo_fecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtFechaNacimiento))
@@ -558,6 +603,50 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_txtIdentificacionActionPerformed
+
+    private void txtIdentificacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIdentificacionMouseClicked
+        // TODO add your handling code here:
+        this.txtIdentificacion.setText("");
+    }//GEN-LAST:event_txtIdentificacionMouseClicked
+
+    private void txtNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreMouseClicked
+        // TODO add your handling code here:
+        this.txtNombre.setText("");
+    }//GEN-LAST:event_txtNombreMouseClicked
+
+    private void txtApellidopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtApellidopMouseClicked
+        // TODO add your handling code here:
+        this.txtApellidop.setText("");
+    }//GEN-LAST:event_txtApellidopMouseClicked
+
+    private void txtApellidomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtApellidomMouseClicked
+        // TODO add your handling code here:
+        this.txtApellidom.setText("");
+    }//GEN-LAST:event_txtApellidomMouseClicked
+
+    private void txtFechaNacimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFechaNacimientoMouseClicked
+        // TODO add your handling code here:
+        this.txtFechaNacimiento.setText("");
+    }//GEN-LAST:event_txtFechaNacimientoMouseClicked
+
+    private void txtDireccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDireccionMouseClicked
+        // TODO add your handling code here:
+        this.txtDireccion.setText("");
+    }//GEN-LAST:event_txtDireccionMouseClicked
+
+    private void txtEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEmailMouseClicked
+        // TODO add your handling code here:
+        this.txtEmail.setText("");
+    }//GEN-LAST:event_txtEmailMouseClicked
+
+    private void txtNrTelefonoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNrTelefonoMouseClicked
+        // TODO add your handling code here:
+        this.txtNrTelefono.setText("");
+    }//GEN-LAST:event_txtNrTelefonoMouseClicked
+
+    private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDireccionActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btgTipoDocumento;
