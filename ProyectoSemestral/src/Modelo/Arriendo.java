@@ -106,6 +106,15 @@ public class Arriendo {
         this.patenteVehiculo = patenteVehiculo;
     }
     
+    
+    
+    public  boolean validarAnioTermino(String anio) {
+    String regex = "^20[0-9]{2}|2[0-9]{3}$";
+    return anio.matches(regex);   
+    }
+    
+    
+    
     //Customers
     @Override
     public String toString() {

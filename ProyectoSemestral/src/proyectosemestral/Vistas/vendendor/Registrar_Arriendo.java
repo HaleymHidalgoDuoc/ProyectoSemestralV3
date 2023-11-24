@@ -6,8 +6,11 @@ package proyectosemestral.Vistas.vendendor;
 
 import Controlador.CtrlArriendo;
 import Modelo.Arriendo;
+import Modelo.Cliente;
 import Modelo.Empleado;
+import Modelo.Vehiculo;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import proyectosemestral.Vistas.VLogin;
 
 
@@ -194,6 +197,16 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
 
         txtIdCliente.setForeground(new java.awt.Color(204, 204, 204));
         txtIdCliente.setText("RUT/PASAPORTE");
+        txtIdCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtIdClienteMouseClicked(evt);
+            }
+        });
+        txtIdCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdClienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pane_identificacionLayout = new javax.swing.GroupLayout(pane_identificacion);
         pane_identificacion.setLayout(pane_identificacionLayout);
@@ -222,6 +235,11 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
 
         txt_IdVehiculo.setForeground(new java.awt.Color(204, 204, 204));
         txt_IdVehiculo.setText("Patente");
+        txt_IdVehiculo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_IdVehiculoMouseClicked(evt);
+            }
+        });
 
         btnVer.setText("Ver Vehiculos");
         btnVer.addActionListener(new java.awt.event.ActionListener() {
@@ -260,6 +278,11 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
 
         txt_fecha.setForeground(new java.awt.Color(204, 204, 204));
         txt_fecha.setText("AAAA/MM/DD");
+        txt_fecha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_fechaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pane_fecha_entregaLayout = new javax.swing.GroupLayout(pane_fecha_entrega);
         pane_fecha_entrega.setLayout(pane_fecha_entregaLayout);
@@ -363,6 +386,11 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
 
         txt_precio.setForeground(new java.awt.Color(204, 204, 204));
         txt_precio.setText("99999");
+        txt_precio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_precioMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pane_fecha_entrega1Layout = new javax.swing.GroupLayout(pane_fecha_entrega1);
         pane_fecha_entrega1.setLayout(pane_fecha_entrega1Layout);
@@ -431,8 +459,7 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
                                 .addComponent(btn_confirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(pane_fecha_entrega1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())))
+                                .addComponent(pane_fecha_entrega1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
         );
 
         pack();
@@ -441,22 +468,54 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
 
     private void btn_confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_confirmarActionPerformed
         //Recolecto los datos
-        String idCliente, idVehiculo, idEmpleado, descripcion;
-        Date fechaTermino;
-        int precio;
+        String idCliente = null, idVehiculo = null, idEmpleado, descripcion;
+        Date fechaTermino = null;
+        int precio = 0;
+        
+        Cliente cliente = new Cliente();
+        Arriendo arriendo = new Arriendo();
+        Vehiculo vehiculo = new Vehiculo();
         
         idEmpleado = empleado.getRutEmpleado();
-        idVehiculo = txt_IdVehiculo.getText();
-        idCliente = txtIdCliente.getText();
+        
+        if(vehiculo.validarPatente(txt_IdVehiculo.getText())){
+            idVehiculo = txt_IdVehiculo.getText();
+        }else{
+            JOptionPane.showMessageDialog(this, "LA PATENTE ingresada es INVALIDA","Validación", JOptionPane.WARNING_MESSAGE);   
+            
+        }
+        
+        
+        
+        if(cliente.validarRut(txtIdCliente.getText())){
+          idCliente = txtIdCliente.getText();  
+        }else{
+        JOptionPane.showMessageDialog(this, "EL RUT ingresado es INVALIDO","Validación", JOptionPane.WARNING_MESSAGE);   
+        }
+        
+        
         descripcion = tat_descripcion.getText();
-        fechaTermino = new Date(txt_fecha.getText());
+        
+        
+        if(arriendo.validarAnioTermino(txt_fecha.getText())){
+            fechaTermino = new Date(txt_fecha.getText()); 
+        }else{
+          JOptionPane.showMessageDialog(this, "EL AÑO ingresado es INVALIDO","Validación", JOptionPane.WARNING_MESSAGE);  
+        }
+       
+        
+        if(precio >=0 && precio <=  2147483647){
         precio = Integer.parseInt(txt_precio.getText());
+        }else{
+        JOptionPane.showMessageDialog(this, "EL Precio ingresado es INVALIDO","Validación", JOptionPane.WARNING_MESSAGE);      
+            }
+        
         
         CtrlArriendo con = new CtrlArriendo();
         if(con.guardarArriendo(idEmpleado, idVehiculo, idCliente, descripcion, fechaTermino, precio)){
-            System.out.println("Guardado con Exito");
+           JOptionPane.showMessageDialog(this, "LOS DATOS FUERON GUARDADOS","Validación", JOptionPane.WARNING_MESSAGE); 
         } else {
-            System.out.println("Error al Guardar");
+        JOptionPane.showMessageDialog(this, "ERROR AL INGRESAR LOS DATOS","Validación", JOptionPane.WARNING_MESSAGE);  
         }
         
        
@@ -497,6 +556,31 @@ public class Registrar_Arriendo extends javax.swing.JFrame {
         tabla.setEmpleado(this.empleado);
         tabla.setVisible(true);
     }//GEN-LAST:event_btnVerActionPerformed
+
+    private void txtIdClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdClienteActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_txtIdClienteActionPerformed
+
+    private void txtIdClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIdClienteMouseClicked
+        // TODO add your handling code here:
+        this.txtIdCliente.setText("");
+    }//GEN-LAST:event_txtIdClienteMouseClicked
+
+    private void txt_IdVehiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_IdVehiculoMouseClicked
+        // TODO add your handling code here:
+        this.txt_IdVehiculo.setText("");
+    }//GEN-LAST:event_txt_IdVehiculoMouseClicked
+
+    private void txt_fechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_fechaMouseClicked
+        // TODO add your handling code here:
+        this.txt_fecha.setText("");
+    }//GEN-LAST:event_txt_fechaMouseClicked
+
+    private void txt_precioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_precioMouseClicked
+        // TODO add your handling code here:
+        this.txt_precio.setText("");
+    }//GEN-LAST:event_txt_precioMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVer;

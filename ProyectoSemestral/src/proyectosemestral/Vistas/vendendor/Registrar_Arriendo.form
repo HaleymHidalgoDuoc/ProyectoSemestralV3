@@ -332,6 +332,10 @@
             </Property>
             <Property name="text" type="java.lang.String" value="RUT/PASAPORTE"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtIdClienteMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIdClienteActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -385,6 +389,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Patente"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_IdVehiculoMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnVer">
           <Properties>
@@ -443,6 +450,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="AAAA/MM/DD"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_fechaMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -609,6 +619,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="99999"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_precioMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

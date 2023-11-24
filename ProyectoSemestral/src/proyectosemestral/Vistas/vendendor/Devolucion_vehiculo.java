@@ -1,7 +1,11 @@
 package proyectosemestral.Vistas.vendendor;
 
 import Controlador.CtrlArriendo;
-import Modelo.Arriendo;
+import Controlador.CtrlCliente;
+import Controlador.CtrlVehiculo;
+import Modelo.Cliente;
+import Modelo.Vehiculo;
+import javax.swing.JOptionPane;
 import proyectosemestral.Vistas.VLogin;
 
 /**
@@ -58,6 +62,11 @@ public class Devolucion_vehiculo extends javax.swing.JFrame {
 
         txtIdCliente.setForeground(new java.awt.Color(204, 204, 204));
         txtIdCliente.setText("Rut/Pasaporte");
+        txtIdCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtIdClienteMouseClicked(evt);
+            }
+        });
         txtIdCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdClienteActionPerformed(evt);
@@ -69,6 +78,11 @@ public class Devolucion_vehiculo extends javax.swing.JFrame {
 
         txtIdVehiculo.setForeground(new java.awt.Color(204, 204, 204));
         txtIdVehiculo.setText("Patente");
+        txtIdVehiculo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtIdVehiculoMouseClicked(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(102, 102, 102));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -282,15 +296,34 @@ public class Devolucion_vehiculo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //Obtener datos
-        String idCliente = this.txtIdCliente.getText();
-        String idVehiculo = this.txtIdVehiculo.getText();
+    //Datos necesarios
+    String idCliente = null,idVehiculo = null;    
+        
+    CtrlVehiculo conv = new CtrlVehiculo();
+    Vehiculo vehiculo = conv.buscarVehiculoID(this.txtIdVehiculo.getText());
+        
+    CtrlCliente conc = new CtrlCliente();
+    Cliente cliente = conc.buscarClienteID(this.txtIdCliente.getText());
+        
+        
+        if(cliente.getIdCliente() != null) {
+            idCliente = this.txtIdCliente.getText();
+        }else{
+        JOptionPane.showMessageDialog(this, "LA IDENTIFICACION ingresada es INVALIDA","Validación", JOptionPane.WARNING_MESSAGE);       
+        }
+        
+        if(vehiculo.getPatente() != null){
+             idVehiculo = this.txtIdVehiculo.getText();
+        }else{
+         JOptionPane.showMessageDialog(this, "LA PATENTE ingresada es INVALIDA","Validación", JOptionPane.WARNING_MESSAGE);      
+        }
+        
         //cambiar los estado
         CtrlArriendo con = new CtrlArriendo();
         if(con.cambiarEstados(idCliente, idVehiculo)){
-            System.out.println("Datos Actualizados");
+         JOptionPane.showMessageDialog(this, "LOS DATOS FUERON GUARDADOS","Validación", JOptionPane.WARNING_MESSAGE); 
         } else {
-            System.out.println("Error al Actualizar");
+        JOptionPane.showMessageDialog(this, "ERROR AL INGRESAR LOS DATOS","Validación", JOptionPane.WARNING_MESSAGE);  
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -324,6 +357,16 @@ public class Devolucion_vehiculo extends javax.swing.JFrame {
     private void txtIdClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdClienteActionPerformed
+
+    private void txtIdClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIdClienteMouseClicked
+        // TODO add your handling code here:
+        this.txtIdCliente.setText("");
+    }//GEN-LAST:event_txtIdClienteMouseClicked
+
+    private void txtIdVehiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIdVehiculoMouseClicked
+        // TODO add your handling code here:
+        this.txtIdVehiculo.setText("");
+    }//GEN-LAST:event_txtIdVehiculoMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cerrar_session;
