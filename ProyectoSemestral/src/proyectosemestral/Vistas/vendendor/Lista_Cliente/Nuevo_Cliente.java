@@ -302,6 +302,11 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
                 txtApellidopMouseClicked(evt);
             }
         });
+        txtApellidop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtApellidopActionPerformed(evt);
+            }
+        });
 
         pane_fondo_Nombre1.setBackground(new java.awt.Color(176, 176, 176));
 
@@ -647,6 +652,10 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
     private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDireccionActionPerformed
+
+    private void txtApellidopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidopActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtApellidopActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btgTipoDocumento;
